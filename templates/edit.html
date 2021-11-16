@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Edit {{ char.name }}</title>
+</head>
+<body>
+<h1>Edit {{ char.name }}</h1>
+
+<form method=post>
+<table border=1 >
+{% for key, val in char.items(): %}
+<tr><td>{{key}}</td>
+<td><input type="text" name="{{key}}" value="{{val}}" /></td></tr>
+{% endfor %}
+</table>
+<input type="submit" value="Make changes!" />
+</form>
+</body>
+</html>

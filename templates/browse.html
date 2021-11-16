@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Browse our Star Wars characters!</title>
+</head>
+<body>
+<h1>Browse our Star Wars characters!</h1>
+<p style="color:red;">{{msg}}</p>
+<ul>
+{% for char in chars: %}
+    <li><a href="{{url_for('edit', name=char.name)}}">{{ char.name }}</a>
+    {% if 'race' in char: %}
+        ({{char.race}})
+    {% endif %}
+    </li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
